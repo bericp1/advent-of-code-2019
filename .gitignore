@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Rust / Cargo
+/target
+**/*.rs.bk
+
+# IDEs
+.idea
+.vscode
+
+# Project
+*.input.txt
