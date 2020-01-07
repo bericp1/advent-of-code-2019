@@ -3,7 +3,7 @@ use super::common::{self, input_list};
 /// Calculates the basic fuel requirements of a module with a given mass.
 ///
 /// This does not take into account the fuel requirements of the fuel added itself, referred to
-/// as the complete fuel requirement. For that see the [`day2`] module.
+/// as the complete fuel requirement.
 ///
 /// # Examples
 ///
@@ -15,8 +15,6 @@ use super::common::{self, input_list};
 /// assert_eq!(day1::calculate_basic_fuel_req_for_module(&1969), 654);
 /// assert_eq!(day1::calculate_basic_fuel_req_for_module(&100756), 33583);
 /// ```
-///
-/// [`day2`]: ../day2
 pub fn calculate_basic_fuel_req_for_module(module_mass: &i32) -> i32 {
     ((module_mass / 3) - 2).max(0)
 }
@@ -24,7 +22,7 @@ pub fn calculate_basic_fuel_req_for_module(module_mass: &i32) -> i32 {
 /// Calculates the total basic fuel requirements of a set of modules given their masses.
 ///
 /// This does not take into account the fuel requirements of the fuel added itself, referred to
-/// as the complete fuel requirement. For that see the [`day2`] module.
+/// as the complete fuel requirement.
 ///
 /// # Examples
 ///
@@ -36,8 +34,6 @@ pub fn calculate_basic_fuel_req_for_module(module_mass: &i32) -> i32 {
 /// assert_eq!(day1::calculate_basic_fuel_req_for_modules(&vec![12, 14, 1969]), 658);
 /// assert_eq!(day1::calculate_basic_fuel_req_for_modules(&vec![12, 14, 1969, 100756]), 34_241);
 /// ```
-///
-/// [`day2`]: ../day2
 pub fn calculate_basic_fuel_req_for_modules(module_masses: &[i32]) -> i32 {
     module_masses
         .iter()
