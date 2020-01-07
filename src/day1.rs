@@ -31,14 +31,14 @@ pub fn calculate_basic_fuel_req_for_module(module_mass: &i32) -> i32 {
 /// ```
 /// use advent_of_code_2019::day1;
 ///
-/// assert_eq!(day1::calculate_basic_fuel_rec_for_modules(&vec![12]), 2);
-/// assert_eq!(day1::calculate_basic_fuel_rec_for_modules(&vec![12, 14]), 4);
-/// assert_eq!(day1::calculate_basic_fuel_rec_for_modules(&vec![12, 14, 1969]), 658);
-/// assert_eq!(day1::calculate_basic_fuel_rec_for_modules(&vec![12, 14, 1969, 100756]), 34_241);
+/// assert_eq!(day1::calculate_basic_fuel_req_for_modules(&vec![12]), 2);
+/// assert_eq!(day1::calculate_basic_fuel_req_for_modules(&vec![12, 14]), 4);
+/// assert_eq!(day1::calculate_basic_fuel_req_for_modules(&vec![12, 14, 1969]), 658);
+/// assert_eq!(day1::calculate_basic_fuel_req_for_modules(&vec![12, 14, 1969, 100756]), 34_241);
 /// ```
 ///
 /// [`day2`]: ../day2
-pub fn calculate_basic_fuel_rec_for_modules(module_masses: &[i32]) -> i32 {
+pub fn calculate_basic_fuel_req_for_modules(module_masses: &[i32]) -> i32 {
     module_masses
         .iter()
         .map(calculate_basic_fuel_req_for_module)
@@ -62,7 +62,7 @@ impl common::DayRunner for Day1Runner {
         }
 
         let masses: Vec<i32> = input_list::InputList::new_from_file(&args[0])?.parse()?;
-        let fuel_requirement = calculate_basic_fuel_rec_for_modules(&masses[..]);
+        let fuel_requirement = calculate_basic_fuel_req_for_modules(&masses[..]);
 
         println!(
             "Basic fuel requirements for all {} modules: {}",
